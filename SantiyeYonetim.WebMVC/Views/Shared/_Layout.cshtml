@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - SantiyeYonetim.WebMVC</title>
+
+    @await Html.PartialAsync("_LayoutCssPartial")
+
+</head>
+<body>
+
+    <partial name="_Header" />
+
+    <partial name="_UserMenu" />
+
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <partial name="_Footer" />
+
+    @await Html.PartialAsync("_LayoutJsPartial");
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

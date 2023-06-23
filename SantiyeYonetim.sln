@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33502.453
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SantiyeYonetim.Entities", "SantiyeYonetim.Entities\SantiyeYonetim.Entities.csproj", "{6C25D29B-F60B-4E6F-AA17-C84869591BDB}"
+	ProjectSection(ProjectDependencies) = postProject
+		{0D485524-B816-437E-85EC-63215DBDE1AB} = {0D485524-B816-437E-85EC-63215DBDE1AB}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SantiyeYonetim.DataAccess", "SantiyeYonetim.DataAccess\SantiyeYonetim.DataAccess.csproj", "{5237F3AF-E1AA-4A45-BBE2-330F9E5ACE6A}"
+	ProjectSection(ProjectDependencies) = postProject
+		{0D485524-B816-437E-85EC-63215DBDE1AB} = {0D485524-B816-437E-85EC-63215DBDE1AB}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SantiyeYonetim.Core", "SantiyeYonetim.Core\SantiyeYonetim.Core.csproj", "{0D485524-B816-437E-85EC-63215DBDE1AB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SantiyeYonetim.Business", "SantiyeYonetim.Business\SantiyeYonetim.Business.csproj", "{504FEB9A-B8CD-450F-82A0-A4BE8BE6C5C2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SantiyeYonetim.WebMVC", "SantiyeYonetim.WebMVC\SantiyeYonetim.WebMVC.csproj", "{063904FF-3796-408D-A527-4BA0179A1919}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6C25D29B-F60B-4E6F-AA17-C84869591BDB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6C25D29B-F60B-4E6F-AA17-C84869591BDB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6C25D29B-F60B-4E6F-AA17-C84869591BDB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6C25D29B-F60B-4E6F-AA17-C84869591BDB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5237F3AF-E1AA-4A45-BBE2-330F9E5ACE6A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5237F3AF-E1AA-4A45-BBE2-330F9E5ACE6A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5237F3AF-E1AA-4A45-BBE2-330F9E5ACE6A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5237F3AF-E1AA-4A45-BBE2-330F9E5ACE6A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0D485524-B816-437E-85EC-63215DBDE1AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D485524-B816-437E-85EC-63215DBDE1AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D485524-B816-437E-85EC-63215DBDE1AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D485524-B816-437E-85EC-63215DBDE1AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{504FEB9A-B8CD-450F-82A0-A4BE8BE6C5C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{504FEB9A-B8CD-450F-82A0-A4BE8BE6C5C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{504FEB9A-B8CD-450F-82A0-A4BE8BE6C5C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{504FEB9A-B8CD-450F-82A0-A4BE8BE6C5C2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{063904FF-3796-408D-A527-4BA0179A1919}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{063904FF-3796-408D-A527-4BA0179A1919}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{063904FF-3796-408D-A527-4BA0179A1919}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{063904FF-3796-408D-A527-4BA0179A1919}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {596748C3-85AF-4507-8FE3-9FBF71250540}
+	EndGlobalSection
+EndGlobal

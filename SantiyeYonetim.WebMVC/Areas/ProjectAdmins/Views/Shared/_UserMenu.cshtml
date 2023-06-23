@@ -1,0 +1,22 @@
+﻿
+
+@if (CurrentUser != null)
+{
+    <a href="#" class="dropdown-item" >Profil Detayı</a>
+    <a href="#" class="dropdown-item">Projelerim</a>
+    <a href="#" class="dropdown-item">Hesap Ayarları</a>
+    <a href="#" class="dropdown-item">Güvenlik</a>
+    <a href="#" class="dropdown-item">Kullanıcı Sözleşmesi</a>
+    <div class="dropdown-divider"></div>
+    <a class="dropdown-item" asp-area="" asp-controller="Account" asp-action="LogOut">Çıkış Yap</a>
+
+}
+else
+{
+
+    <br />
+    <a class="w3-bar-item w3-button" asp-area="" asp-controller="Account" asp-action="Login">Giriş Yap</a>
+    <br />
+    <a class="w3-bar-item w3-button" asp-area="" asp-controller="Account" asp-action="SignUp">Kayıt Ol</a>
+}
+
