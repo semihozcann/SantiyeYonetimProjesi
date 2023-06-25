@@ -78,7 +78,20 @@ namespace SantiyeYonetim.DataAccess.Migrations
                         .HasMaxLength(150)
                         .HasColumnType("nvarchar(150)");
 
+                    b.Property<int>("ProductionRowNumber")
+                        .HasColumnType("int");
+
+                    b.Property<int>("ProductionTypeId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("ProjectProductionTypeId")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
+
+                    b.HasIndex("ProductionTypeId");
+
+                    b.HasIndex("ProjectProductionTypeId");
 
                     b.ToTable("Productions");
 
@@ -87,43 +100,590 @@ namespace SantiyeYonetim.DataAccess.Migrations
                         {
                             Id = 1,
                             Description = "Description",
-                            Name = "Kolon Demir İmalatı"
+                            Name = "HAFRİYAT",
+                            ProductionRowNumber = 1,
+                            ProductionTypeId = 1
                         },
                         new
                         {
                             Id = 2,
                             Description = "Description",
-                            Name = "Kolon Beton Dökümü İmalatı"
+                            Name = "DOLGU",
+                            ProductionRowNumber = 1,
+                            ProductionTypeId = 1
                         },
                         new
                         {
                             Id = 3,
                             Description = "Description",
-                            Name = "Döşeme Demir İmalatı"
+                            Name = "GROBETON",
+                            ProductionRowNumber = 1,
+                            ProductionTypeId = 2
                         },
                         new
                         {
                             Id = 4,
                             Description = "Description",
-                            Name = "Döşeme Kalıp İmalatı"
+                            Name = "TEMEL MANTOLAMA",
+                            ProductionRowNumber = 1,
+                            ProductionTypeId = 2
                         },
                         new
                         {
                             Id = 5,
                             Description = "Description",
-                            Name = "Kara Sıva İmalatı"
+                            Name = "TEMEL BETONU",
+                            ProductionRowNumber = 1,
+                            ProductionTypeId = 2
                         },
                         new
                         {
                             Id = 6,
                             Description = "Description",
-                            Name = "Duvar İmalatı"
+                            Name = "BODRUM BETONARME",
+                            ProductionRowNumber = 1,
+                            ProductionTypeId = 2
                         },
                         new
                         {
                             Id = 7,
                             Description = "Description",
-                            Name = "Fayans İmalatı"
+                            Name = "BODRUM DRENAJ",
+                            ProductionRowNumber = 1,
+                            ProductionTypeId = 2
+                        },
+                        new
+                        {
+                            Id = 8,
+                            Description = "Description",
+                            Name = "BODRUM PERDESİ İZOLASYONU",
+                            ProductionRowNumber = 1,
+                            ProductionTypeId = 2
+                        },
+                        new
+                        {
+                            Id = 9,
+                            Description = "Description",
+                            Name = "BETONARME İMALATI",
+                            ProductionRowNumber = 1,
+                            ProductionTypeId = 2
+                        },
+                        new
+                        {
+                            Id = 10,
+                            Description = "Description",
+                            Name = "PREKAST İMALATLARI",
+                            ProductionRowNumber = 1,
+                            ProductionTypeId = 2
+                        },
+                        new
+                        {
+                            Id = 11,
+                            Description = "Description",
+                            Name = "MERDİVEN PREKAST MONTAJI",
+                            ProductionRowNumber = 1,
+                            ProductionTypeId = 2
+                        },
+                        new
+                        {
+                            Id = 12,
+                            Description = "Description",
+                            Name = "DIŞ CEPHE PREKAST MONTAJI",
+                            ProductionRowNumber = 1,
+                            ProductionTypeId = 2
+                        },
+                        new
+                        {
+                            Id = 13,
+                            Description = "Description",
+                            Name = "ÇATI İŞLERİ",
+                            ProductionRowNumber = 1,
+                            ProductionTypeId = 3
+                        },
+                        new
+                        {
+                            Id = 14,
+                            Description = "Description",
+                            Name = "İÇ DIŞ ÖRME DUVARLAR",
+                            ProductionRowNumber = 1,
+                            ProductionTypeId = 3
+                        },
+                        new
+                        {
+                            Id = 15,
+                            Description = "Description",
+                            Name = "KARA SIVA ( İÇ - DIŞ )",
+                            ProductionRowNumber = 1,
+                            ProductionTypeId = 3
+                        },
+                        new
+                        {
+                            Id = 16,
+                            Description = "Description",
+                            Name = "İÇ CEPHE ISI İZOLASYONU",
+                            ProductionRowNumber = 1,
+                            ProductionTypeId = 3
+                        },
+                        new
+                        {
+                            Id = 17,
+                            Description = "Description",
+                            Name = "İÇ SIVA ( ALÇI)",
+                            ProductionRowNumber = 1,
+                            ProductionTypeId = 3
+                        },
+                        new
+                        {
+                            Id = 18,
+                            Description = "Description",
+                            Name = "DIŞ CEPHE TAMİRATI",
+                            ProductionRowNumber = 1,
+                            ProductionTypeId = 3
+                        },
+                        new
+                        {
+                            Id = 19,
+                            Description = "Description",
+                            Name = "PREKAST BİRLEŞİM İZOLASYONU",
+                            ProductionRowNumber = 1,
+                            ProductionTypeId = 3
+                        },
+                        new
+                        {
+                            Id = 20,
+                            Description = "Description",
+                            Name = "İÇ BOYA MACUNU",
+                            ProductionRowNumber = 1,
+                            ProductionTypeId = 3
+                        },
+                        new
+                        {
+                            Id = 21,
+                            Description = "Description",
+                            Name = "KARTONPİYER",
+                            ProductionRowNumber = 1,
+                            ProductionTypeId = 3
+                        },
+                        new
+                        {
+                            Id = 22,
+                            Description = "Description",
+                            Name = "DIŞ CEPHE ISI İZOLASYONU (MANTOLAMA)",
+                            ProductionRowNumber = 1,
+                            ProductionTypeId = 3
+                        },
+                        new
+                        {
+                            Id = 23,
+                            Description = "Description",
+                            Name = "ŞAP + SES İZOLASYONU",
+                            ProductionRowNumber = 1,
+                            ProductionTypeId = 3
+                        },
+                        new
+                        {
+                            Id = 24,
+                            Description = "Description",
+                            Name = "MERMER DENİZLİK",
+                            ProductionRowNumber = 1,
+                            ProductionTypeId = 3
+                        },
+                        new
+                        {
+                            Id = 25,
+                            Description = "Description",
+                            Name = "FRANSIZ BALKON KORKULUK",
+                            ProductionRowNumber = 1,
+                            ProductionTypeId = 3
+                        },
+                        new
+                        {
+                            Id = 26,
+                            Description = "Description",
+                            Name = "YANGIN MERDİVEN KORKULUK",
+                            ProductionRowNumber = 1,
+                            ProductionTypeId = 3
+                        },
+                        new
+                        {
+                            Id = 27,
+                            Description = "Description",
+                            Name = "FAYANS İMALATI",
+                            ProductionRowNumber = 1,
+                            ProductionTypeId = 3
+                        },
+                        new
+                        {
+                            Id = 28,
+                            Description = "Description",
+                            Name = "MERMER İMALATI",
+                            ProductionRowNumber = 1,
+                            ProductionTypeId = 3
+                        },
+                        new
+                        {
+                            Id = 29,
+                            Description = "Description",
+                            Name = "SERAMİK İMALATLARI",
+                            ProductionRowNumber = 1,
+                            ProductionTypeId = 3
+                        },
+                        new
+                        {
+                            Id = 30,
+                            Description = "Description",
+                            Name = "PVC DOĞRAMA MONTAJI",
+                            ProductionRowNumber = 1,
+                            ProductionTypeId = 3
+                        },
+                        new
+                        {
+                            Id = 31,
+                            Description = "Description",
+                            Name = "CAM MONTAJI",
+                            ProductionRowNumber = 1,
+                            ProductionTypeId = 3
+                        },
+                        new
+                        {
+                            Id = 32,
+                            Description = "Description",
+                            Name = "MENFEZ MONTAJLARI",
+                            ProductionRowNumber = 1,
+                            ProductionTypeId = 3
+                        },
+                        new
+                        {
+                            Id = 33,
+                            Description = "Description",
+                            Name = "İÇ BOYA ASTARI",
+                            ProductionRowNumber = 1,
+                            ProductionTypeId = 3
+                        },
+                        new
+                        {
+                            Id = 34,
+                            Description = "Description",
+                            Name = "DIŞ BOYA",
+                            ProductionRowNumber = 1,
+                            ProductionTypeId = 3
+                        },
+                        new
+                        {
+                            Id = 35,
+                            Description = "Description",
+                            Name = "MERDİVEN KORKULUĞU",
+                            ProductionRowNumber = 1,
+                            ProductionTypeId = 3
+                        },
+                        new
+                        {
+                            Id = 36,
+                            Description = "Description",
+                            Name = "DAİRE GİRİŞ KAPILARI",
+                            ProductionRowNumber = 1,
+                            ProductionTypeId = 3
+                        },
+                        new
+                        {
+                            Id = 37,
+                            Description = "Description",
+                            Name = "ASMA TAVAN",
+                            ProductionRowNumber = 1,
+                            ProductionTypeId = 3
+                        },
+                        new
+                        {
+                            Id = 38,
+                            Description = "Description",
+                            Name = "İÇ BOYA SON KAT",
+                            ProductionRowNumber = 1,
+                            ProductionTypeId = 3
+                        },
+                        new
+                        {
+                            Id = 39,
+                            Description = "Description",
+                            Name = "DAİRE İÇ KAPILARI",
+                            ProductionRowNumber = 1,
+                            ProductionTypeId = 3
+                        },
+                        new
+                        {
+                            Id = 40,
+                            Description = "Description",
+                            Name = "ŞAFT KAPAK ve DOLAPLARI",
+                            ProductionRowNumber = 1,
+                            ProductionTypeId = 3
+                        },
+                        new
+                        {
+                            Id = 41,
+                            Description = "Description",
+                            Name = "MUTFAK DOLAPLARI",
+                            ProductionRowNumber = 1,
+                            ProductionTypeId = 3
+                        },
+                        new
+                        {
+                            Id = 42,
+                            Description = "Description",
+                            Name = "BANYO DOLAPLARI",
+                            ProductionRowNumber = 1,
+                            ProductionTypeId = 3
+                        },
+                        new
+                        {
+                            Id = 43,
+                            Description = "Description",
+                            Name = "PORTMANTO ve GÖMME DOLAP",
+                            ProductionRowNumber = 1,
+                            ProductionTypeId = 3
+                        },
+                        new
+                        {
+                            Id = 44,
+                            Description = "Description",
+                            Name = "ANKASTRE BEYAZ EŞYA",
+                            ProductionRowNumber = 1,
+                            ProductionTypeId = 3
+                        },
+                        new
+                        {
+                            Id = 45,
+                            Description = "Description",
+                            Name = "MDF SÜPÜRGELİK",
+                            ProductionRowNumber = 1,
+                            ProductionTypeId = 3
+                        },
+                        new
+                        {
+                            Id = 46,
+                            Description = "Description",
+                            Name = "PARKE KAPLAMA",
+                            ProductionRowNumber = 1,
+                            ProductionTypeId = 3
+                        },
+                        new
+                        {
+                            Id = 47,
+                            Description = "Description",
+                            Name = "KABA TEMİZLİK",
+                            ProductionRowNumber = 1,
+                            ProductionTypeId = 3
+                        },
+                        new
+                        {
+                            Id = 48,
+                            Description = "Description",
+                            Name = "KABA TEMİZLİK",
+                            ProductionRowNumber = 1,
+                            ProductionTypeId = 3
+                        },
+                        new
+                        {
+                            Id = 49,
+                            Description = "Description",
+                            Name = "HALI KAPLAMA",
+                            ProductionRowNumber = 1,
+                            ProductionTypeId = 3
+                        },
+                        new
+                        {
+                            Id = 50,
+                            Description = "Description",
+                            Name = "DUŞAKABİN MONTAJI",
+                            ProductionRowNumber = 1,
+                            ProductionTypeId = 3
+                        },
+                        new
+                        {
+                            Id = 51,
+                            Description = "Description",
+                            Name = "BİNA GİRİŞ İMALATLARI",
+                            ProductionRowNumber = 1,
+                            ProductionTypeId = 3
+                        },
+                        new
+                        {
+                            Id = 52,
+                            Description = "Description",
+                            Name = "İNCE TEMİZLİK",
+                            ProductionRowNumber = 1,
+                            ProductionTypeId = 3
+                        },
+                        new
+                        {
+                            Id = 53,
+                            Description = "Description",
+                            Name = "ELEKTRİK İMALATLARI (1. GRUP)",
+                            ProductionRowNumber = 1,
+                            ProductionTypeId = 4
+                        },
+                        new
+                        {
+                            Id = 54,
+                            Description = "Description",
+                            Name = "ELEKTRİK ARMATÜR MONTAJI",
+                            ProductionRowNumber = 1,
+                            ProductionTypeId = 4
+                        },
+                        new
+                        {
+                            Id = 55,
+                            Description = "Description",
+                            Name = "ELEKTRİK İMALATLARI (2. GRUP)",
+                            ProductionRowNumber = 1,
+                            ProductionTypeId = 4
+                        },
+                        new
+                        {
+                            Id = 56,
+                            Description = "Description",
+                            Name = "ELEKTRİK TEST",
+                            ProductionRowNumber = 1,
+                            ProductionTypeId = 4
+                        },
+                        new
+                        {
+                            Id = 57,
+                            Description = "Description",
+                            Name = "SIHHİ TESİSAT",
+                            ProductionRowNumber = 1,
+                            ProductionTypeId = 5
+                        },
+                        new
+                        {
+                            Id = 58,
+                            Description = "Description",
+                            Name = "YANGIN TESİSATI",
+                            ProductionRowNumber = 1,
+                            ProductionTypeId = 5
+                        },
+                        new
+                        {
+                            Id = 59,
+                            Description = "Description",
+                            Name = "KALORİFER TESİSATI",
+                            ProductionRowNumber = 1,
+                            ProductionTypeId = 5
+                        },
+                        new
+                        {
+                            Id = 60,
+                            Description = "Description",
+                            Name = "ASANSÖR RAY MONTAJI",
+                            ProductionRowNumber = 1,
+                            ProductionTypeId = 5
+                        },
+                        new
+                        {
+                            Id = 61,
+                            Description = "Description",
+                            Name = "ASANSÖR KAPI KASA MONTAJI",
+                            ProductionRowNumber = 1,
+                            ProductionTypeId = 5
+                        },
+                        new
+                        {
+                            Id = 62,
+                            Description = "Description",
+                            Name = "DOĞALGAZ TESİSATI",
+                            ProductionRowNumber = 1,
+                            ProductionTypeId = 5
+                        },
+                        new
+                        {
+                            Id = 63,
+                            Description = "Description",
+                            Name = "ASANSÖR MAKİNE MOTOR",
+                            ProductionRowNumber = 1,
+                            ProductionTypeId = 5
+                        },
+                        new
+                        {
+                            Id = 64,
+                            Description = "Description",
+                            Name = "RADYATÖR PANEL MONTAJI",
+                            ProductionRowNumber = 1,
+                            ProductionTypeId = 5
+                        },
+                        new
+                        {
+                            Id = 65,
+                            Description = "Description",
+                            Name = "VİTRİFİYE ARMATÜR MONTAJI",
+                            ProductionRowNumber = 1,
+                            ProductionTypeId = 5
+                        },
+                        new
+                        {
+                            Id = 66,
+                            Description = "Description",
+                            Name = "ASANSÖR KABİN MONTAJI",
+                            ProductionRowNumber = 1,
+                            ProductionTypeId = 5
+                        },
+                        new
+                        {
+                            Id = 67,
+                            Description = "Description",
+                            Name = "MEKANİK TEST",
+                            ProductionRowNumber = 1,
+                            ProductionTypeId = 5
+                        });
+                });
+
+            modelBuilder.Entity("SantiyeYonetim.Entities.Concrete.ProductionType", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(150)
+                        .HasColumnType("nvarchar(150)");
+
+                    b.Property<string>("SmallName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(1)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("ProductionTypes");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Name = "HAFRİYAT",
+                            SmallName = "H"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Name = "KABA İŞLER",
+                            SmallName = "K"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Name = "İNCE İŞLER",
+                            SmallName = "İ"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Name = "ELEKTRİK İŞLERİ",
+                            SmallName = "E"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Name = "MAKİNE İŞLERİ",
+                            SmallName = "M"
                         });
                 });
 
@@ -171,41 +731,14 @@ namespace SantiyeYonetim.DataAccess.Migrations
                         .HasMaxLength(150)
                         .HasColumnType("nvarchar(150)");
 
+                    b.Property<int>("ProjectId")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
 
-                    b.ToTable("ProjectBlocks");
+                    b.HasIndex("ProjectId");
 
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Name = "A Block"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Name = "B Block"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            Name = "C Block"
-                        },
-                        new
-                        {
-                            Id = 4,
-                            Name = "D Block"
-                        },
-                        new
-                        {
-                            Id = 5,
-                            Name = "E Block"
-                        },
-                        new
-                        {
-                            Id = 6,
-                            Name = "F Block"
-                        });
+                    b.ToTable("ProjectBlocks");
                 });
 
             modelBuilder.Entity("SantiyeYonetim.Entities.Concrete.ProjectFloor", b =>
@@ -220,46 +753,14 @@ namespace SantiyeYonetim.DataAccess.Migrations
                         .HasMaxLength(150)
                         .HasColumnType("nvarchar(150)");
 
+                    b.Property<int>("ProjectBlockId")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
 
-                    b.ToTable("ProjectFloors");
+                    b.HasIndex("ProjectBlockId");
 
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Name = "1. Kat"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Name = "2. Kat"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            Name = "3. Kat"
-                        },
-                        new
-                        {
-                            Id = 4,
-                            Name = "4. Kat"
-                        },
-                        new
-                        {
-                            Id = 5,
-                            Name = "5. Kat"
-                        },
-                        new
-                        {
-                            Id = 6,
-                            Name = "6. Kat"
-                        },
-                        new
-                        {
-                            Id = 7,
-                            Name = "7. Kat"
-                        });
+                    b.ToTable("ProjectFloors");
                 });
 
             modelBuilder.Entity("SantiyeYonetim.Entities.Concrete.ProjectProduction", b =>
@@ -279,19 +780,16 @@ namespace SantiyeYonetim.DataAccess.Migrations
                     b.Property<string>("DrawingFilePath")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<DateTime>("ProductionEndDate")
+                        .HasColumnType("datetime2");
+
                     b.Property<int>("ProductionId")
                         .HasColumnType("int");
 
-                    b.Property<int>("ProjectBlockId")
-                        .HasColumnType("int");
+                    b.Property<DateTime>("ProductionStartDate")
+                        .HasColumnType("datetime2");
 
-                    b.Property<int>("ProjectFloorId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("ProjectId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("ProjectProductionTypeId")
+                    b.Property<int>("TotalProductionDays")
                         .HasColumnType("int");
 
                     b.Property<string>("UpdatedPeople")
@@ -304,14 +802,6 @@ namespace SantiyeYonetim.DataAccess.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("ProductionId");
-
-                    b.HasIndex("ProjectBlockId");
-
-                    b.HasIndex("ProjectFloorId");
-
-                    b.HasIndex("ProjectId");
-
-                    b.HasIndex("ProjectProductionTypeId");
 
                     b.ToTable("ProjectProductions");
                 });
@@ -344,41 +834,19 @@ namespace SantiyeYonetim.DataAccess.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasMaxLength(150)
-                        .HasColumnType("nvarchar(150)");
+                    b.Property<int>("ProductionTypeId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("ProjectFloorId")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
-                    b.ToTable("ProjectProductionTypes");
+                    b.HasIndex("ProductionTypeId");
 
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Name = "Kaba İşler"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Name = "İnce İşler"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            Name = "Temel"
-                        },
-                        new
-                        {
-                            Id = 4,
-                            Name = "Fore Kazık"
-                        },
-                        new
-                        {
-                            Id = 5,
-                            Name = "Dsm"
-                        });
+                    b.HasIndex("ProjectFloorId");
+
+                    b.ToTable("ProjectProductionTypes");
                 });
 
             modelBuilder.Entity("SantiyeYonetim.Entities.Concrete.ProjectType", b =>
@@ -458,7 +926,7 @@ namespace SantiyeYonetim.DataAccess.Migrations
                         new
                         {
                             Id = 1,
-                            ConcurrencyStamp = "8d31653f-60d1-4d9f-a8a4-b0aaa4fde466",
+                            ConcurrencyStamp = "43c0a0da-b595-4586-b12b-442cc2fc06a4",
                             Description = "Admin Account",
                             Name = "Admin",
                             NormalizedName = "ADMİN"
@@ -466,7 +934,7 @@ namespace SantiyeYonetim.DataAccess.Migrations
                         new
                         {
                             Id = 2,
-                            ConcurrencyStamp = "dbbb9fa0-5e1a-441e-b444-2a5c95437eea",
+                            ConcurrencyStamp = "ef98778d-02f6-4278-84ca-ca95796e2c69",
                             Description = "User Account",
                             Name = "User",
                             NormalizedName = "USER"
@@ -474,7 +942,7 @@ namespace SantiyeYonetim.DataAccess.Migrations
                         new
                         {
                             Id = 3,
-                            ConcurrencyStamp = "33d24080-d445-452e-ba3b-cbda15893d27",
+                            ConcurrencyStamp = "20f996e2-c6ac-46ac-a566-f4dbe6eaa3e1",
                             Description = "ProjectAdmin Account",
                             Name = "ProjectAdmin",
                             NormalizedName = "PROJECTADMİN"
@@ -671,6 +1139,21 @@ namespace SantiyeYonetim.DataAccess.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
+            modelBuilder.Entity("SantiyeYonetim.Entities.Concrete.Production", b =>
+                {
+                    b.HasOne("SantiyeYonetim.Entities.Concrete.ProductionType", "ProductionType")
+                        .WithMany("Productions")
+                        .HasForeignKey("ProductionTypeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("SantiyeYonetim.Entities.Concrete.ProjectProductionType", null)
+                        .WithMany("Productions")
+                        .HasForeignKey("ProjectProductionTypeId");
+
+                    b.Navigation("ProductionType");
+                });
+
             modelBuilder.Entity("SantiyeYonetim.Entities.Concrete.Project", b =>
                 {
                     b.HasOne("SantiyeYonetim.Entities.Concrete.Company", "Company")
@@ -690,6 +1173,28 @@ namespace SantiyeYonetim.DataAccess.Migrations
                     b.Navigation("ProjectType");
                 });
 
+            modelBuilder.Entity("SantiyeYonetim.Entities.Concrete.ProjectBlock", b =>
+                {
+                    b.HasOne("SantiyeYonetim.Entities.Concrete.Project", "Project")
+                        .WithMany("ProjectBlocks")
+                        .HasForeignKey("ProjectId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Project");
+                });
+
+            modelBuilder.Entity("SantiyeYonetim.Entities.Concrete.ProjectFloor", b =>
+                {
+                    b.HasOne("SantiyeYonetim.Entities.Concrete.ProjectBlock", "ProjectBlock")
+                        .WithMany("ProjectFloors")
+                        .HasForeignKey("ProjectBlockId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("ProjectBlock");
+                });
+
             modelBuilder.Entity("SantiyeYonetim.Entities.Concrete.ProjectProduction", b =>
                 {
                     b.HasOne("SantiyeYonetim.Entities.Concrete.Production", "Production")
@@ -698,39 +1203,7 @@ namespace SantiyeYonetim.DataAccess.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("SantiyeYonetim.Entities.Concrete.ProjectBlock", "ProjectBlock")
-                        .WithMany()
-                        .HasForeignKey("ProjectBlockId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("SantiyeYonetim.Entities.Concrete.ProjectFloor", "ProjectFloor")
-                        .WithMany()
-                        .HasForeignKey("ProjectFloorId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("SantiyeYonetim.Entities.Concrete.Project", "Project")
-                        .WithMany()
-                        .HasForeignKey("ProjectId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("SantiyeYonetim.Entities.Concrete.ProjectProductionType", "ProjectProductionType")
-                        .WithMany()
-                        .HasForeignKey("ProjectProductionTypeId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.Navigation("Production");
-
-                    b.Navigation("Project");
-
-                    b.Navigation("ProjectBlock");
-
-                    b.Navigation("ProjectFloor");
-
-                    b.Navigation("ProjectProductionType");
                 });
 
             modelBuilder.Entity("SantiyeYonetim.Entities.Concrete.ProjectProductionImage", b =>
@@ -742,6 +1215,25 @@ namespace SantiyeYonetim.DataAccess.Migrations
                         .IsRequired();
 
                     b.Navigation("ProjectProduction");
+                });
+
+            modelBuilder.Entity("SantiyeYonetim.Entities.Concrete.ProjectProductionType", b =>
+                {
+                    b.HasOne("SantiyeYonetim.Entities.Concrete.ProductionType", "ProductionType")
+                        .WithMany()
+                        .HasForeignKey("ProductionTypeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("SantiyeYonetim.Entities.Concrete.ProjectFloor", "ProjectFloor")
+                        .WithMany("ProjectProductionTypes")
+                        .HasForeignKey("ProjectFloorId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("ProductionType");
+
+                    b.Navigation("ProjectFloor");
                 });
 
             modelBuilder.Entity("SantiyeYonetim.Entities.Concrete.RoleClaim", b =>
@@ -800,9 +1292,34 @@ namespace SantiyeYonetim.DataAccess.Migrations
                     b.Navigation("Projects");
                 });
 
+            modelBuilder.Entity("SantiyeYonetim.Entities.Concrete.ProductionType", b =>
+                {
+                    b.Navigation("Productions");
+                });
+
+            modelBuilder.Entity("SantiyeYonetim.Entities.Concrete.Project", b =>
+                {
+                    b.Navigation("ProjectBlocks");
+                });
+
+            modelBuilder.Entity("SantiyeYonetim.Entities.Concrete.ProjectBlock", b =>
+                {
+                    b.Navigation("ProjectFloors");
+                });
+
+            modelBuilder.Entity("SantiyeYonetim.Entities.Concrete.ProjectFloor", b =>
+                {
+                    b.Navigation("ProjectProductionTypes");
+                });
+
             modelBuilder.Entity("SantiyeYonetim.Entities.Concrete.ProjectProduction", b =>
                 {
                     b.Navigation("ProjectProductionImages");
+                });
+
+            modelBuilder.Entity("SantiyeYonetim.Entities.Concrete.ProjectProductionType", b =>
+                {
+                    b.Navigation("Productions");
                 });
 #pragma warning restore 612, 618
         }

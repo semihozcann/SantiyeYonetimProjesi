@@ -9,7 +9,12 @@ namespace SantiyeYonetim.Entities.Concrete
 {
     public class ProjectBlock : BaseEntitiy
     {
+        public int ProjectId { get; set; }
         public string Name { get; set; }
+
+        public Project Project { get; set; }
+        public List<ProjectFloor> ProjectFloors { get; set; }
+
 
     }
 }

@@ -42,6 +42,7 @@ namespace SantiyeYonetim.DataAccess.Concrete.EntityFramework
         public DbSet<ProjectProduction> ProjectProductions { get; set; }
         public DbSet<ProjectProductionType> ProjectProductionTypes { get; set; }
         public DbSet<ProjectType> ProjectTypes { get; set; }
+        public DbSet<ProductionType> ProductionTypes { get; set; }
 
 
 
@@ -66,6 +67,7 @@ namespace SantiyeYonetim.DataAccess.Concrete.EntityFramework
             builder.ApplyConfiguration(new ProjectProductionMap());
             builder.ApplyConfiguration(new ProjectProductionTypeMap());
             builder.ApplyConfiguration(new ProjectTypeMap());
+            builder.ApplyConfiguration(new ProductionTypeMap());
 
 
         }

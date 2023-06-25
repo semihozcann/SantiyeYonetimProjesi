@@ -20,11 +20,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Abstract\" />
-    <Folder Include="Concrete\EntityFramework\Repositories\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\SantiyeYonetim.Core\SantiyeYonetim.Core.csproj" />
     <ProjectReference Include="..\SantiyeYonetim.Entities\SantiyeYonetim.Entities.csproj" />
   </ItemGroup>

@@ -18,6 +18,8 @@ namespace SantiyeYonetim.Entities.Concrete
 
         public Company Company { get; set; }
         public ProjectType ProjectType { get; set; }
+        public List<ProjectBlock> ProjectBlocks { get; set; }
+
 
 
 

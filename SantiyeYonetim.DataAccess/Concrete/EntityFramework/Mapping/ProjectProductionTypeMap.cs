@@ -15,38 +15,9 @@ namespace SantiyeYonetim.DataAccess.Concrete.EntityFramework.Mapping
         {
             builder.HasKey(p => p.Id);
             builder.Property(p => p.Id).ValueGeneratedOnAdd();
-            builder.Property(p => p.Name).IsRequired();
-            builder.Property(p => p.Name).HasMaxLength(150);
+            builder.Property(p => p.ProductionTypeId);
 
             builder.ToTable("ProjectProductionTypes");
-
-            builder.HasData(
-                new ProjectProductionType
-                {
-                    Id = 1,
-                    Name = "Kaba İşler"
-                },
-                new ProjectProductionType
-                {
-                    Id = 2,
-                    Name = "İnce İşler"
-                },
-                new ProjectProductionType
-                {
-                    Id = 3,
-                    Name = "Temel"
-                },
-                new ProjectProductionType
-                {
-                    Id = 4,
-                    Name = "Fore Kazık"
-                },
-                new ProjectProductionType
-                {
-                    Id = 5,
-                    Name = "Dsm"
-                }
-                );
         }
     }
 }

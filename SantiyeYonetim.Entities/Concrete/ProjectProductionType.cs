@@ -9,7 +9,15 @@ namespace SantiyeYonetim.Entities.Concrete
 {
     public class ProjectProductionType : BaseEntitiy
     {
-        public string Name { get; set; }
+        public int ProjectFloorId { get; set; }
+        public int ProductionTypeId { get; set; }
+
+
+        public ProductionType ProductionType { get; set; }
+        public ProjectFloor ProjectFloor { get; set; }
+        public List<Production> Productions { get; set; }
+
+
 
     }
 }
