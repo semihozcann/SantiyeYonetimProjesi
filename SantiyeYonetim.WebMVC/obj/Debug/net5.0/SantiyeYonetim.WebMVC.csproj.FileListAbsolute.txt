@@ -235,8 +235,6 @@ C:\Users\semih\Desktop\C# Kodları\Devam Eden Projeler\SantiyeYonetim\SantiyeYon
 C:\Users\semih\Desktop\C# Kodları\Devam Eden Projeler\SantiyeYonetim\SantiyeYonetim.WebMVC\bin\Debug\net5.0\refs\Microsoft.Extensions.ObjectPool.dll
 C:\Users\semih\Desktop\C# Kodları\Devam Eden Projeler\SantiyeYonetim\SantiyeYonetim.WebMVC\bin\Debug\net5.0\refs\Microsoft.Extensions.Options.ConfigurationExtensions.dll
 C:\Users\semih\Desktop\C# Kodları\Devam Eden Projeler\SantiyeYonetim\SantiyeYonetim.WebMVC\bin\Debug\net5.0\refs\Microsoft.Extensions.Options.DataAnnotations.dll
-C:\Users\semih\Desktop\C# Kodları\Devam Eden Projeler\SantiyeYonetim\SantiyeYonetim.WebMVC\bin\Debug\net5.0\refs\Microsoft.Extensions.Options.dll
-C:\Users\semih\Desktop\C# Kodları\Devam Eden Projeler\SantiyeYonetim\SantiyeYonetim.WebMVC\bin\Debug\net5.0\refs\Microsoft.Extensions.Primitives.dll
 C:\Users\semih\Desktop\C# Kodları\Devam Eden Projeler\SantiyeYonetim\SantiyeYonetim.WebMVC\bin\Debug\net5.0\refs\Microsoft.Extensions.WebEncoders.dll
 C:\Users\semih\Desktop\C# Kodları\Devam Eden Projeler\SantiyeYonetim\SantiyeYonetim.WebMVC\bin\Debug\net5.0\refs\Microsoft.JSInterop.dll
 C:\Users\semih\Desktop\C# Kodları\Devam Eden Projeler\SantiyeYonetim\SantiyeYonetim.WebMVC\bin\Debug\net5.0\refs\Microsoft.Net.Http.Headers.dll
@@ -335,7 +333,6 @@ C:\Users\semih\Desktop\C# Kodları\Devam Eden Projeler\SantiyeYonetim\SantiyeYon
 C:\Users\semih\Desktop\C# Kodları\Devam Eden Projeler\SantiyeYonetim\SantiyeYonetim.WebMVC\bin\Debug\net5.0\refs\System.Resources.Reader.dll
 C:\Users\semih\Desktop\C# Kodları\Devam Eden Projeler\SantiyeYonetim\SantiyeYonetim.WebMVC\bin\Debug\net5.0\refs\System.Resources.ResourceManager.dll
 C:\Users\semih\Desktop\C# Kodları\Devam Eden Projeler\SantiyeYonetim\SantiyeYonetim.WebMVC\bin\Debug\net5.0\refs\System.Resources.Writer.dll
-C:\Users\semih\Desktop\C# Kodları\Devam Eden Projeler\SantiyeYonetim\SantiyeYonetim.WebMVC\bin\Debug\net5.0\refs\System.Runtime.CompilerServices.Unsafe.dll
 C:\Users\semih\Desktop\C# Kodları\Devam Eden Projeler\SantiyeYonetim\SantiyeYonetim.WebMVC\bin\Debug\net5.0\refs\System.Runtime.CompilerServices.VisualC.dll
 C:\Users\semih\Desktop\C# Kodları\Devam Eden Projeler\SantiyeYonetim\SantiyeYonetim.WebMVC\bin\Debug\net5.0\refs\System.Runtime.dll
 C:\Users\semih\Desktop\C# Kodları\Devam Eden Projeler\SantiyeYonetim\SantiyeYonetim.WebMVC\bin\Debug\net5.0\refs\System.Runtime.Extensions.dll
@@ -482,3 +479,8 @@ C:\Users\semih\Desktop\C# Kodları\Devam Eden Projeler\SantiyeYonetim\SantiyeYon
 C:\Users\semih\Desktop\C# Kodları\Devam Eden Projeler\SantiyeYonetim\SantiyeYonetim.WebMVC\obj\Debug\net5.0\Razor\Areas\ProjectAdmins\Views\_ViewImports.cshtml.g.cs
 C:\Users\semih\Desktop\C# Kodları\Devam Eden Projeler\SantiyeYonetim\SantiyeYonetim.WebMVC\obj\Debug\net5.0\Razor\Areas\ProjectAdmins\Views\_ViewStart.cshtml.g.cs
 C:\Users\semih\Desktop\C# Kodları\Devam Eden Projeler\SantiyeYonetim\SantiyeYonetim.WebMVC\obj\Debug\net5.0\Razor\Areas\ProjectAdmins\Views\Dashboard\Index.cshtml.g.cs
+C:\Users\semih\Desktop\C# Kodları\Devam Eden Projeler\SantiyeYonetim\SantiyeYonetim.WebMVC\bin\Debug\net5.0\AutoMapper.dll
+C:\Users\semih\Desktop\C# Kodları\Devam Eden Projeler\SantiyeYonetim\SantiyeYonetim.WebMVC\bin\Debug\net5.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\semih\Desktop\C# Kodları\Devam Eden Projeler\SantiyeYonetim\SantiyeYonetim.WebMVC\bin\Debug\net5.0\Microsoft.Extensions.Options.dll
+C:\Users\semih\Desktop\C# Kodları\Devam Eden Projeler\SantiyeYonetim\SantiyeYonetim.WebMVC\bin\Debug\net5.0\Microsoft.Extensions.Primitives.dll
+C:\Users\semih\Desktop\C# Kodları\Devam Eden Projeler\SantiyeYonetim\SantiyeYonetim.WebMVC\bin\Debug\net5.0\System.Runtime.CompilerServices.Unsafe.dll

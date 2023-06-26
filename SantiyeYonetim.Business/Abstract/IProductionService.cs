@@ -17,6 +17,6 @@ namespace SantiyeYonetim.Business.Abstract
         Task<IResult> UpdateAsync(ProductionUpdateDto productionUpdateDto);
         Task<IResult> DeleteAsync(int productionId);
 
-        List<Production> GetCategories();
+        List<Production> GetAllProduction();
     }
 }

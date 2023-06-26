@@ -17,6 +17,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using SantiyeYonetim.Business.DependecyResolvers;
 
 namespace SantiyeYonetim.WebMVC
 {
@@ -58,6 +59,7 @@ namespace SantiyeYonetim.WebMVC
             services.AddDependencyResolvers(new ICoreModule[]
             {
                 new CoreModule(),
+                new AutoMapperModule()
             });
         }
 

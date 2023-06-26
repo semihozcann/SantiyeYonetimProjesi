@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "k5rnBlddeoTO16BXcXSYH/ulWuRA3DXfW1dE5+lJ1yoEEmOjnvHWqn1VHr+Sxz3Ww+74Ol6sITIFGo6ske2csA==",
+  "dgSpecHash": "CkeZalwQVWxfc6tH5szDaEZ4B7P4k0xFtSb3W1TqXp7RjWXdRVHHyjwc6rXEu/gkbB3a+8uER77iLqGqNtG46w==",
   "success": true,
   "projectFilePath": "C:\\Users\\semih\\Desktop\\C# Kodları\\Devam Eden Projeler\\SantiyeYonetim\\SantiyeYonetim.DataAccess\\SantiyeYonetim.DataAccess.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\semih\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\semih\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\semih\\.nuget\\packages\\microsoft.aspnetcore.authentication\\2.2.0\\microsoft.aspnetcore.authentication.2.2.0.nupkg.sha512",
     "C:\\Users\\semih\\.nuget\\packages\\microsoft.aspnetcore.authentication.abstractions\\2.2.0\\microsoft.aspnetcore.authentication.abstractions.2.2.0.nupkg.sha512",
