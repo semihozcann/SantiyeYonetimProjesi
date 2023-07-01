@@ -1,0 +1,35 @@
+﻿@model SantiyeYonetim.WebMVC.Models.Projects.ProjectUpdateViewModel
+
+@{
+    ViewData["Title"] = "Update";
+    Layout = "~/Areas/ProjectAdmins/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <form asp-controller="Projects" asp-action="Update" method="post">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <input type="hidden" name="Id" value="@Model.Id" />
+        <div class="form-group">
+            <label asp-for="Name" class="control-label"></label>
+            <input asp-for="Name" id="Name" type="text" class="form-control" placeholder="Proje Adı" />
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            @Html.DropDownListFor(x=>x.ProjectTypeId, (List<SelectListItem>)Model.ProjectTypesForDr, new { @class = "form-control"})
+        </div>
+        <div class="form-group">
+            @Html.DropDownListFor(x=>x.CompanyId, (List<SelectListItem>)Model.CompaniesForDr, new { @class = "form-control"})
+        </div>
+        <div class="form-group">
+            <label asp-for="Description" class="control-label"></label>
+            <input asp-for="Description" id="Description" type="text" class="form-control" placeholder="Proje Açıklaması" />
+            <span asp-validation-for="Description" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <button class="btn badge-primary" type="submit" value="Update" id="addCategory">Güncelle</button>
+            @ViewBag.ProjectResultMessage
+
+        </div>
+    </form>
+</div>
+

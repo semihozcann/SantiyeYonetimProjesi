@@ -484,3 +484,9 @@ C:\Users\semih\Desktop\C# Kodları\Devam Eden Projeler\SantiyeYonetim\SantiyeYon
 C:\Users\semih\Desktop\C# Kodları\Devam Eden Projeler\SantiyeYonetim\SantiyeYonetim.WebMVC\bin\Debug\net5.0\Microsoft.Extensions.Options.dll
 C:\Users\semih\Desktop\C# Kodları\Devam Eden Projeler\SantiyeYonetim\SantiyeYonetim.WebMVC\bin\Debug\net5.0\Microsoft.Extensions.Primitives.dll
 C:\Users\semih\Desktop\C# Kodları\Devam Eden Projeler\SantiyeYonetim\SantiyeYonetim.WebMVC\bin\Debug\net5.0\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\semih\Desktop\C# Kodları\Devam Eden Projeler\SantiyeYonetim\SantiyeYonetim.WebMVC\obj\Debug\net5.0\Razor\Areas\ProjectAdmins\Views\Projects\Add.cshtml.g.cs
+C:\Users\semih\Desktop\C# Kodları\Devam Eden Projeler\SantiyeYonetim\SantiyeYonetim.WebMVC\obj\Debug\net5.0\Razor\Areas\ProjectAdmins\Views\Projects\GetAllProjects.cshtml.g.cs
+C:\Users\semih\Desktop\C# Kodları\Devam Eden Projeler\SantiyeYonetim\SantiyeYonetim.WebMVC\obj\Debug\net5.0\Razor\Areas\ProjectAdmins\Views\Projects\Update.cshtml.g.cs
+C:\Users\semih\Desktop\C# Kodları\Devam Eden Projeler\SantiyeYonetim\SantiyeYonetim.WebMVC\obj\Debug\net5.0\Razor\Areas\ProjectAdmins\Views\Projects\ProjectDetails.cshtml.g.cs
+C:\Users\semih\Desktop\C# Kodları\Devam Eden Projeler\SantiyeYonetim\SantiyeYonetim.WebMVC\obj\Debug\net5.0\Razor\Areas\ProjectAdmins\Views\ProjectBlocks\Add.cshtml.g.cs
+C:\Users\semih\Desktop\C# Kodları\Devam Eden Projeler\SantiyeYonetim\SantiyeYonetim.WebMVC\obj\Debug\net5.0\Razor\Areas\ProjectAdmins\Views\ProjectBlocks\GetAllProjectBlocks.cshtml.g.cs

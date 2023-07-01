@@ -1,0 +1,22 @@
+﻿@model SantiyeYonetim.WebMVC.Models.ProjectBlocks.ProjectBlockAddViewModel
+
+@{
+    ViewData["Title"] = "Add";
+    Layout = "~/Areas/ProjectAdmins/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <form asp-controller="ProjectBlocks" asp-action="Add" method="post" enctype="multipart/form-data">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <input type="hidden" name="Id" value="projectId" />
+        <div class="form-group">
+            <label asp-for="Name" class="control-label"></label>
+            <input asp-for="Name" id="Name" type="text" class="form-control" placeholder="Proje Adı" />
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <button class="btn badge-primary" type="submit" value="Add">Kaydet</button>
+            @ViewBag.ProjectResultMessage
+        </div>
+    </form>
+</div>

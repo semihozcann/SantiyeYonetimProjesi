@@ -1,0 +1,53 @@
+﻿@model SantiyeYonetim.WebMVC.Models.ProjectBlocks.ProjectBlockListViewModel
+
+
+@{
+    ViewData["Title"] = "GetAllProjectBlocks";
+    Layout = "~/Areas/ProjectAdmins/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+
+    <div>
+        <table>
+            <tr>
+                <td>Yeni kat eklemek için ekle butonuna tıklayınız</td>
+                <td>:</td>
+                <td> <a asp-area="ProjectAdmins" asp-controller="ProjectBlocks" asp-action="Add">Kat Ekle</a></td>
+            </tr>
+        </table>
+    </div>
+
+    @if (Model != null)
+    {
+        <div>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <td>Id</td>
+                        <td>Proje Adı</td>
+                        <td>Blok Adı</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var projectBlock in Model.ProjectBlocks)
+                    {
+                        <tr>
+                            <td>@projectBlock.Id</td>
+                            <td>@projectBlock.Project.Name</td>
+                            <td>@projectBlock.Name</td>
+                            <td><a href="/ProjectAdmins/ProjectBlocks/Update/@projectBlock.Id" id="categoryListTableButton">Güncelle</a></td>
+                            <td><a href="/ProjectAdmins/ProjectBlocks/Delete/@projectBlock.Id" id="categoryListTableButton">Sil</a></td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+
+        </div>
+    }
+    else
+    {
+        <p>Hiç Kategori Bulunamadı</p>
+    }
+</div>
+

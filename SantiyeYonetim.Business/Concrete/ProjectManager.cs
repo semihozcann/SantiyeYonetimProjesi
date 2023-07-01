@@ -39,7 +39,7 @@ namespace SantiyeYonetim.Business.Concrete
 
         public async Task<IResult> DeleteAsync(int projectId)
         {
-            var project = await _projectDal.FindAsync(projectId);
+            var project = await _projectDal.GetAsync(p => p.Id == projectId);
             if (project != null)
             {
                 await _projectDal.DeleteAsync(project);
@@ -67,7 +67,7 @@ namespace SantiyeYonetim.Business.Concrete
 
         public async Task<IDataResult<Project>> GetByIdAsync(int projectId)
         {
-            var project = await _projectDal.FindAsync(projectId);
+            var project = await _projectDal.GetAsync(p => p.Id == projectId);
             if (project != null)
             {
                 return new SuccessDataResult<Project>(project , Messages.ProjectGeted);
