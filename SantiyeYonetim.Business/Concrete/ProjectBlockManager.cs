@@ -67,7 +67,7 @@ namespace SantiyeYonetim.Business.Concrete
 
         public async Task<IDataResult<ProjectBlock>> GetByIdAsync(int projectBlockId)
         {
-            var projectBlock = await _projectBlockDal.FindAsync(projectBlockId);
+            var projectBlock = await _projectBlockDal.GetAsync(p => p.Id == projectBlockId);
             if (projectBlock != null)
             {
                 return new SuccessDataResult<ProjectBlock>(projectBlock, Messages.ProjectBlockGeted);
@@ -98,6 +98,12 @@ namespace SantiyeYonetim.Business.Concrete
                 return new ErrorResult(Messages.ProjectBlockNotFound);
             }
 
+        }
+
+
+        public int LastId()
+        {
+            return _projectBlockDal.GetLastId();
         }
     }
 }

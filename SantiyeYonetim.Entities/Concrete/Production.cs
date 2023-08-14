@@ -9,13 +9,10 @@ namespace SantiyeYonetim.Entities.Concrete
 {
     public class Production : BaseEntitiy
     {
-        public int ProductionTypeId { get; set; }
         public int ProductionRowNumber { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
 
-
-        public ProductionType ProductionType { get; set; }
 
     }
 }

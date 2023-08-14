@@ -12,6 +12,6 @@ namespace SantiyeYonetim.Entities.Concrete
         public string Name { get; set; }
         public char SmallName { get; set; }
 
-        public List<Production> Productions { get; set; }
+
     }
 }

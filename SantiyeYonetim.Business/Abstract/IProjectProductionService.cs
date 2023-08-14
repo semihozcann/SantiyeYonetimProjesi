@@ -12,6 +12,7 @@ namespace SantiyeYonetim.Business.Abstract
     public interface IProjectProductionService
     {
         Task<IDataResult<ProjectProduction>> GetByIdAsync(int projectProductionId);
+        Task<IDataResult<List<ProjectProduction>>> GetAllByProjectProductionTypeIdAsync(int ProjectProductionTypeId);
         Task<IDataResult<List<ProjectProduction>>> GetAllAsync();
         Task<IResult> AddAsync(ProjectProductionAddDto projectProductionAddDto);
         Task<IResult> UpdateAsync(ProjectProductionUpdateDto projectProductionUpdateDto);

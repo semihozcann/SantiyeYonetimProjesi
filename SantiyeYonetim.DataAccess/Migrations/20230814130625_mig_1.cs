@@ -69,6 +69,21 @@ namespace SantiyeYonetim.DataAccess.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Productions",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    ProductionRowNumber = table.Column<int>(type: "int", nullable: false),
+                    Name = table.Column<string>(type: "nvarchar(150)", maxLength: 150, nullable: false),
+                    Description = table.Column<string>(type: "nvarchar(250)", maxLength: 250, nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Productions", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "ProductionTypes",
                 columns: table => new
                 {
@@ -297,41 +312,13 @@ namespace SantiyeYonetim.DataAccess.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Productions",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    ProductionTypeId = table.Column<int>(type: "int", nullable: false),
-                    ProductionRowNumber = table.Column<int>(type: "int", nullable: false),
-                    Name = table.Column<string>(type: "nvarchar(150)", maxLength: 150, nullable: false),
-                    Description = table.Column<string>(type: "nvarchar(250)", maxLength: 250, nullable: false),
-                    ProjectProductionTypeId = table.Column<int>(type: "int", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Productions", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Productions_ProductionTypes_ProductionTypeId",
-                        column: x => x.ProductionTypeId,
-                        principalTable: "ProductionTypes",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_Productions_ProjectProductionTypes_ProjectProductionTypeId",
-                        column: x => x.ProjectProductionTypeId,
-                        principalTable: "ProjectProductionTypes",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "ProjectProductions",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     ProductionId = table.Column<int>(type: "int", nullable: false),
+                    ProjectProductionTypeId = table.Column<int>(type: "int", nullable: false),
                     DrawingFilePath = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     ProductionStartDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ProductionEndDate = table.Column<DateTime>(type: "datetime2", nullable: false),
@@ -348,6 +335,12 @@ namespace SantiyeYonetim.DataAccess.Migrations
                         name: "FK_ProjectProductions_Productions_ProductionId",
                         column: x => x.ProductionId,
                         principalTable: "Productions",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_ProjectProductions_ProjectProductionTypes_ProjectProductionTypeId",
+                        column: x => x.ProjectProductionTypeId,
+                        principalTable: "ProjectProductionTypes",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -377,9 +370,9 @@ namespace SantiyeYonetim.DataAccess.Migrations
                 columns: new[] { "Id", "ConcurrencyStamp", "Description", "Name", "NormalizedName" },
                 values: new object[,]
                 {
-                    { 1, "43c0a0da-b595-4586-b12b-442cc2fc06a4", "Admin Account", "Admin", "ADMİN" },
-                    { 2, "ef98778d-02f6-4278-84ca-ca95796e2c69", "User Account", "User", "USER" },
-                    { 3, "20f996e2-c6ac-46ac-a566-f4dbe6eaa3e1", "ProjectAdmin Account", "ProjectAdmin", "PROJECTADMİN" }
+                    { 3, "60a60eda-9854-4be3-abde-440fc9eaef77", "ProjectAdmin Account", "ProjectAdmin", "PROJECTADMİN" },
+                    { 1, "f14eb7ba-176d-460d-a338-bac7eb12b579", "Admin Account", "Admin", "ADMİN" },
+                    { 2, "d0cfa4d4-0781-4a43-80e6-5ac78065bf0f", "User Account", "User", "USER" }
                 });
 
             migrationBuilder.InsertData(
@@ -388,8 +381,8 @@ namespace SantiyeYonetim.DataAccess.Migrations
                 values: new object[,]
                 {
                     { 1, "Semih İnşaat", "Description" },
-                    { 2, "Halil İnşaat", "Deneme Açıklaması" },
-                    { 3, "Hamza İnşaat", "Deneme Açıklaması2" }
+                    { 3, "Hamza İnşaat", "Deneme Açıklaması2" },
+                    { 2, "Halil İnşaat", "Deneme Açıklaması" }
                 });
 
             migrationBuilder.InsertData(
@@ -397,11 +390,92 @@ namespace SantiyeYonetim.DataAccess.Migrations
                 columns: new[] { "Id", "Name", "SmallName" },
                 values: new object[,]
                 {
-                    { 1, "HAFRİYAT", "H" },
-                    { 2, "KABA İŞLER", "K" },
-                    { 3, "İNCE İŞLER", "İ" },
+                    { 5, "MAKİNE İŞLERİ", "M" },
                     { 4, "ELEKTRİK İŞLERİ", "E" },
-                    { 5, "MAKİNE İŞLERİ", "M" }
+                    { 3, "İNCE İŞLER", "İ" },
+                    { 2, "KABA İŞLER", "K" },
+                    { 1, "HAFRİYAT", "H" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Productions",
+                columns: new[] { "Id", "Description", "Name", "ProductionRowNumber" },
+                values: new object[,]
+                {
+                    { 51, "Description", "BİNA GİRİŞ İMALATLARI", 1 },
+                    { 50, "Description", "DUŞAKABİN MONTAJI", 1 },
+                    { 49, "Description", "HALI KAPLAMA", 1 },
+                    { 48, "Description", "KABA TEMİZLİK", 1 },
+                    { 47, "Description", "KABA TEMİZLİK", 1 },
+                    { 46, "Description", "PARKE KAPLAMA", 1 },
+                    { 43, "Description", "PORTMANTO ve GÖMME DOLAP", 1 },
+                    { 44, "Description", "ANKASTRE BEYAZ EŞYA", 1 },
+                    { 52, "Description", "İNCE TEMİZLİK", 1 },
+                    { 42, "Description", "BANYO DOLAPLARI", 1 },
+                    { 41, "Description", "MUTFAK DOLAPLARI", 1 },
+                    { 1, "Description", "HAFRİYAT", 1 },
+                    { 45, "Description", "MDF SÜPÜRGELİK", 1 },
+                    { 53, "Description", "ELEKTRİK İMALATLARI (1. GRUP)", 1 },
+                    { 56, "Description", "ELEKTRİK TEST", 1 },
+                    { 55, "Description", "ELEKTRİK İMALATLARI (2. GRUP)", 1 },
+                    { 39, "Description", "DAİRE İÇ KAPILARI", 1 },
+                    { 57, "Description", "SIHHİ TESİSAT", 1 },
+                    { 58, "Description", "YANGIN TESİSATI", 1 },
+                    { 59, "Description", "KALORİFER TESİSATI", 1 },
+                    { 60, "Description", "ASANSÖR RAY MONTAJI", 1 },
+                    { 61, "Description", "ASANSÖR KAPI KASA MONTAJI", 1 },
+                    { 62, "Description", "DOĞALGAZ TESİSATI", 1 },
+                    { 63, "Description", "ASANSÖR MAKİNE MOTOR", 1 },
+                    { 64, "Description", "RADYATÖR PANEL MONTAJI", 1 },
+                    { 65, "Description", "VİTRİFİYE ARMATÜR MONTAJI", 1 },
+                    { 66, "Description", "ASANSÖR KABİN MONTAJI", 1 },
+                    { 67, "Description", "MEKANİK TEST", 1 },
+                    { 54, "Description", "ELEKTRİK ARMATÜR MONTAJI", 1 },
+                    { 2, "Description", "DOLGU", 1 },
+                    { 40, "Description", "ŞAFT KAPAK ve DOLAPLARI", 1 }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Productions",
+                columns: new[] { "Id", "Description", "Name", "ProductionRowNumber" },
+                values: new object[,]
+                {
+                    { 36, "Description", "DAİRE GİRİŞ KAPILARI", 1 },
+                    { 16, "Description", "İÇ CEPHE ISI İZOLASYONU", 1 },
+                    { 15, "Description", "KARA SIVA ( İÇ - DIŞ )", 1 },
+                    { 14, "Description", "İÇ DIŞ ÖRME DUVARLAR", 1 },
+                    { 13, "Description", "ÇATI İŞLERİ", 1 },
+                    { 12, "Description", "DIŞ CEPHE PREKAST MONTAJI", 1 },
+                    { 11, "Description", "MERDİVEN PREKAST MONTAJI", 1 },
+                    { 37, "Description", "ASMA TAVAN", 1 },
+                    { 10, "Description", "PREKAST İMALATLARI", 1 },
+                    { 8, "Description", "BODRUM PERDESİ İZOLASYONU", 1 },
+                    { 7, "Description", "BODRUM DRENAJ", 1 },
+                    { 6, "Description", "BODRUM BETONARME", 1 },
+                    { 5, "Description", "TEMEL BETONU", 1 },
+                    { 4, "Description", "TEMEL MANTOLAMA", 1 },
+                    { 3, "Description", "GROBETON", 1 },
+                    { 9, "Description", "BETONARME İMALATI", 1 },
+                    { 18, "Description", "DIŞ CEPHE TAMİRATI", 1 },
+                    { 17, "Description", "İÇ SIVA ( ALÇI)", 1 },
+                    { 20, "Description", "İÇ BOYA MACUNU", 1 },
+                    { 35, "Description", "MERDİVEN KORKULUĞU", 1 },
+                    { 34, "Description", "DIŞ BOYA", 1 },
+                    { 33, "Description", "İÇ BOYA ASTARI", 1 },
+                    { 32, "Description", "MENFEZ MONTAJLARI", 1 },
+                    { 31, "Description", "CAM MONTAJI", 1 },
+                    { 19, "Description", "PREKAST BİRLEŞİM İZOLASYONU", 1 },
+                    { 29, "Description", "SERAMİK İMALATLARI", 1 },
+                    { 30, "Description", "PVC DOĞRAMA MONTAJI", 1 },
+                    { 27, "Description", "FAYANS İMALATI", 1 },
+                    { 26, "Description", "YANGIN MERDİVEN KORKULUK", 1 },
+                    { 25, "Description", "FRANSIZ BALKON KORKULUK", 1 },
+                    { 24, "Description", "MERMER DENİZLİK", 1 },
+                    { 23, "Description", "ŞAP + SES İZOLASYONU", 1 },
+                    { 22, "Description", "DIŞ CEPHE ISI İZOLASYONU (MANTOLAMA)", 1 },
+                    { 21, "Description", "KARTONPİYER", 1 },
+                    { 28, "Description", "MERMER İMALATI", 1 },
+                    { 38, "Description", "İÇ BOYA SON KAT", 1 }
                 });
 
             migrationBuilder.InsertData(
@@ -412,87 +486,6 @@ namespace SantiyeYonetim.DataAccess.Migrations
                     { 1, "Description", "Konut Projesi" },
                     { 2, "Description", "Hidroelektrik Santral Projesi" },
                     { 3, "Description", "Hastane Projesi" }
-                });
-
-            migrationBuilder.InsertData(
-                table: "Productions",
-                columns: new[] { "Id", "Description", "Name", "ProductionRowNumber", "ProductionTypeId", "ProjectProductionTypeId" },
-                values: new object[,]
-                {
-                    { 1, "Description", "HAFRİYAT", 1, 1, null },
-                    { 36, "Description", "DAİRE GİRİŞ KAPILARI", 1, 3, null },
-                    { 37, "Description", "ASMA TAVAN", 1, 3, null },
-                    { 38, "Description", "İÇ BOYA SON KAT", 1, 3, null },
-                    { 39, "Description", "DAİRE İÇ KAPILARI", 1, 3, null },
-                    { 40, "Description", "ŞAFT KAPAK ve DOLAPLARI", 1, 3, null },
-                    { 41, "Description", "MUTFAK DOLAPLARI", 1, 3, null },
-                    { 42, "Description", "BANYO DOLAPLARI", 1, 3, null },
-                    { 43, "Description", "PORTMANTO ve GÖMME DOLAP", 1, 3, null },
-                    { 44, "Description", "ANKASTRE BEYAZ EŞYA", 1, 3, null },
-                    { 45, "Description", "MDF SÜPÜRGELİK", 1, 3, null },
-                    { 46, "Description", "PARKE KAPLAMA", 1, 3, null },
-                    { 47, "Description", "KABA TEMİZLİK", 1, 3, null },
-                    { 48, "Description", "KABA TEMİZLİK", 1, 3, null },
-                    { 49, "Description", "HALI KAPLAMA", 1, 3, null },
-                    { 35, "Description", "MERDİVEN KORKULUĞU", 1, 3, null },
-                    { 50, "Description", "DUŞAKABİN MONTAJI", 1, 3, null },
-                    { 52, "Description", "İNCE TEMİZLİK", 1, 3, null },
-                    { 53, "Description", "ELEKTRİK İMALATLARI (1. GRUP)", 1, 4, null },
-                    { 54, "Description", "ELEKTRİK ARMATÜR MONTAJI", 1, 4, null },
-                    { 55, "Description", "ELEKTRİK İMALATLARI (2. GRUP)", 1, 4, null },
-                    { 56, "Description", "ELEKTRİK TEST", 1, 4, null },
-                    { 57, "Description", "SIHHİ TESİSAT", 1, 5, null },
-                    { 58, "Description", "YANGIN TESİSATI", 1, 5, null },
-                    { 59, "Description", "KALORİFER TESİSATI", 1, 5, null },
-                    { 60, "Description", "ASANSÖR RAY MONTAJI", 1, 5, null },
-                    { 61, "Description", "ASANSÖR KAPI KASA MONTAJI", 1, 5, null },
-                    { 62, "Description", "DOĞALGAZ TESİSATI", 1, 5, null },
-                    { 63, "Description", "ASANSÖR MAKİNE MOTOR", 1, 5, null },
-                    { 64, "Description", "RADYATÖR PANEL MONTAJI", 1, 5, null },
-                    { 65, "Description", "VİTRİFİYE ARMATÜR MONTAJI", 1, 5, null },
-                    { 51, "Description", "BİNA GİRİŞ İMALATLARI", 1, 3, null },
-                    { 66, "Description", "ASANSÖR KABİN MONTAJI", 1, 5, null },
-                    { 34, "Description", "DIŞ BOYA", 1, 3, null },
-                    { 32, "Description", "MENFEZ MONTAJLARI", 1, 3, null },
-                    { 2, "Description", "DOLGU", 1, 1, null },
-                    { 3, "Description", "GROBETON", 1, 2, null },
-                    { 4, "Description", "TEMEL MANTOLAMA", 1, 2, null },
-                    { 5, "Description", "TEMEL BETONU", 1, 2, null },
-                    { 6, "Description", "BODRUM BETONARME", 1, 2, null },
-                    { 7, "Description", "BODRUM DRENAJ", 1, 2, null },
-                    { 8, "Description", "BODRUM PERDESİ İZOLASYONU", 1, 2, null }
-                });
-
-            migrationBuilder.InsertData(
-                table: "Productions",
-                columns: new[] { "Id", "Description", "Name", "ProductionRowNumber", "ProductionTypeId", "ProjectProductionTypeId" },
-                values: new object[,]
-                {
-                    { 9, "Description", "BETONARME İMALATI", 1, 2, null },
-                    { 10, "Description", "PREKAST İMALATLARI", 1, 2, null },
-                    { 11, "Description", "MERDİVEN PREKAST MONTAJI", 1, 2, null },
-                    { 12, "Description", "DIŞ CEPHE PREKAST MONTAJI", 1, 2, null },
-                    { 13, "Description", "ÇATI İŞLERİ", 1, 3, null },
-                    { 14, "Description", "İÇ DIŞ ÖRME DUVARLAR", 1, 3, null },
-                    { 15, "Description", "KARA SIVA ( İÇ - DIŞ )", 1, 3, null },
-                    { 33, "Description", "İÇ BOYA ASTARI", 1, 3, null },
-                    { 16, "Description", "İÇ CEPHE ISI İZOLASYONU", 1, 3, null },
-                    { 18, "Description", "DIŞ CEPHE TAMİRATI", 1, 3, null },
-                    { 19, "Description", "PREKAST BİRLEŞİM İZOLASYONU", 1, 3, null },
-                    { 20, "Description", "İÇ BOYA MACUNU", 1, 3, null },
-                    { 21, "Description", "KARTONPİYER", 1, 3, null },
-                    { 22, "Description", "DIŞ CEPHE ISI İZOLASYONU (MANTOLAMA)", 1, 3, null },
-                    { 23, "Description", "ŞAP + SES İZOLASYONU", 1, 3, null },
-                    { 24, "Description", "MERMER DENİZLİK", 1, 3, null },
-                    { 25, "Description", "FRANSIZ BALKON KORKULUK", 1, 3, null },
-                    { 26, "Description", "YANGIN MERDİVEN KORKULUK", 1, 3, null },
-                    { 27, "Description", "FAYANS İMALATI", 1, 3, null },
-                    { 28, "Description", "MERMER İMALATI", 1, 3, null },
-                    { 29, "Description", "SERAMİK İMALATLARI", 1, 3, null },
-                    { 30, "Description", "PVC DOĞRAMA MONTAJI", 1, 3, null },
-                    { 31, "Description", "CAM MONTAJI", 1, 3, null },
-                    { 17, "Description", "İÇ SIVA ( ALÇI)", 1, 3, null },
-                    { 67, "Description", "MEKANİK TEST", 1, 5, null }
                 });
 
             migrationBuilder.CreateIndex(
@@ -535,16 +528,6 @@ namespace SantiyeYonetim.DataAccess.Migrations
                 filter: "[NormalizedUserName] IS NOT NULL");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Productions_ProductionTypeId",
-                table: "Productions",
-                column: "ProductionTypeId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Productions_ProjectProductionTypeId",
-                table: "Productions",
-                column: "ProjectProductionTypeId");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_ProjectBlocks_ProjectId",
                 table: "ProjectBlocks",
                 column: "ProjectId");
@@ -563,6 +546,11 @@ namespace SantiyeYonetim.DataAccess.Migrations
                 name: "IX_ProjectProductions_ProductionId",
                 table: "ProjectProductions",
                 column: "ProductionId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_ProjectProductions_ProjectProductionTypeId",
+                table: "ProjectProductions",
+                column: "ProjectProductionTypeId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_ProjectProductionTypes_ProductionTypeId",

@@ -490,3 +490,6 @@ C:\Users\semih\Desktop\C# Kodları\Devam Eden Projeler\SantiyeYonetim\SantiyeYon
 C:\Users\semih\Desktop\C# Kodları\Devam Eden Projeler\SantiyeYonetim\SantiyeYonetim.WebMVC\obj\Debug\net5.0\Razor\Areas\ProjectAdmins\Views\Projects\ProjectDetails.cshtml.g.cs
 C:\Users\semih\Desktop\C# Kodları\Devam Eden Projeler\SantiyeYonetim\SantiyeYonetim.WebMVC\obj\Debug\net5.0\Razor\Areas\ProjectAdmins\Views\ProjectBlocks\Add.cshtml.g.cs
 C:\Users\semih\Desktop\C# Kodları\Devam Eden Projeler\SantiyeYonetim\SantiyeYonetim.WebMVC\obj\Debug\net5.0\Razor\Areas\ProjectAdmins\Views\ProjectBlocks\GetAllProjectBlocks.cshtml.g.cs
+C:\Users\semih\Desktop\C# Kodları\Devam Eden Projeler\SantiyeYonetim\SantiyeYonetim.WebMVC\obj\Debug\net5.0\Razor\Areas\ProjectAdmins\Views\ProjectBlocks\ProjectBlockDetails.cshtml.g.cs
+C:\Users\semih\Desktop\C# Kodları\Devam Eden Projeler\SantiyeYonetim\SantiyeYonetim.WebMVC\obj\Debug\net5.0\Razor\Areas\ProjectAdmins\Views\ProjectFloors\ProjectFloorDetails.cshtml.g.cs
+C:\Users\semih\Desktop\C# Kodları\Devam Eden Projeler\SantiyeYonetim\SantiyeYonetim.WebMVC\obj\Debug\net5.0\Razor\Areas\ProjectAdmins\Views\ProjectProductionTypes\ProjectProductionTypeDetails.cshtml.g.cs

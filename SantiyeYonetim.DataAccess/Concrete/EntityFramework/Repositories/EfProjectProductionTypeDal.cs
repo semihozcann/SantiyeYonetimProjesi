@@ -15,5 +15,18 @@ namespace SantiyeYonetim.DataAccess.Concrete.EntityFramework.Repositories
         public EfProjectProductionTypeDal(DbContext context) : base(context)
         {
         }
+
+        public int GetLastId()
+        {
+            using (SantiyeYonetimContext context = new SantiyeYonetimContext())
+            {
+                var result = from q in context.ProjectProductionTypes
+                             orderby q.Id ascending
+                             select q.Id;
+                return result.Last();
+            }
+
+
+        }
     }
 }

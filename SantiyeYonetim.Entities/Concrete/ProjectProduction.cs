@@ -10,6 +10,7 @@ namespace SantiyeYonetim.Entities.Concrete
     public class ProjectProduction : BaseEntitiy
     {
         public int ProductionId { get; set; }
+        public int ProjectProductionTypeId { get; set; }
 
         public string DrawingFilePath { get; set; }
         public DateTime ProductionStartDate { get; set; }
@@ -23,6 +24,7 @@ namespace SantiyeYonetim.Entities.Concrete
 
 
         public Production Production { get; set; }
+        public ProjectProductionType ProjectProductionType { get; set; }
 
         public List<ProjectProductionImage> ProjectProductionImages { get; set; }
 

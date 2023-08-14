@@ -10,5 +10,6 @@ namespace SantiyeYonetim.DataAccess.Abstract
 {
     public interface IProjectProductionTypeDal : IEntityRepository<ProjectProductionType>
     {
+        public int GetLastId();
     }
 }

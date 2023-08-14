@@ -12,11 +12,13 @@ namespace SantiyeYonetim.WebMVC.Areas.ProjectAdmins.Controllers
     {
         private readonly IProjectBlockService _projectBlockService;
         private readonly IProjectService _projectService;
+        private readonly IProjectFloorService _projectFloorService;
 
-        public ProjectBlocksController(IUserAccessor userAccessor, IProjectBlockService projectBlockService, IProjectService projectService) : base(userAccessor)
+        public ProjectBlocksController(IUserAccessor userAccessor, IProjectBlockService projectBlockService, IProjectService projectService, IProjectFloorService projectFloorService) : base(userAccessor)
         {
             _projectBlockService = projectBlockService;
             _projectService = projectService;
+            _projectFloorService = projectFloorService;
         }
 
         public IActionResult Index()
@@ -68,6 +70,26 @@ namespace SantiyeYonetim.WebMVC.Areas.ProjectAdmins.Controllers
             if (result.Success)
             {
                 return View(projectBlocks);
+            }
+            return View();
+        }
+
+        public async Task<IActionResult> ProjectBlockDetails(int Id)
+        {
+            var projectFloor = await _projectFloorService.GetAllAsync();
+            var result = await _projectBlockService.GetByIdAsync(Id);
+            ViewBag.ProjectResultMessage = result.Message;
+            ViewBag.projectId = Id;
+
+            var projectBlock = new ProjectBlockDetailViewModel
+            {
+                ProjectBlock = result.Data,
+                Message = result.Message,
+            };
+
+            if (result.Success)
+            {
+                return View(projectBlock);
             }
             return View();
         }

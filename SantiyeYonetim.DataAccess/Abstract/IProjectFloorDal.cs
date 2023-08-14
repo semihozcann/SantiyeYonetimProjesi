@@ -10,5 +10,6 @@ namespace SantiyeYonetim.DataAccess.Abstract
 {
     public interface IProjectFloorDal : IEntityRepository<ProjectFloor>
     {
+        public int GetLastId();
     }
 }

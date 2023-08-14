@@ -67,7 +67,7 @@ namespace SantiyeYonetim.Business.Concrete
 
         public async Task<IDataResult<ProjectProduction>> GetByIdAsync(int projectProductionId)
         {
-            var projectProduction = await _projectProductionDal.FindAsync(projectProductionId);
+            var projectProduction = await _projectProductionDal.GetAsync(p => p.Id == projectProductionId);
             if (projectProduction == null)
             {
                 return new SuccessDataResult<ProjectProduction>(projectProduction , Messages.ProjectProductionGeted);
@@ -96,6 +96,19 @@ namespace SantiyeYonetim.Business.Concrete
             else
             {
                 return new ErrorResult(Messages.ProjectProductionNotFound);
+            }
+        }
+
+        public async Task<IDataResult<List<ProjectProduction>>> GetAllByProjectProductionTypeIdAsync(int ProjectProductionTypeId)
+        {
+            var projectProduction = await _projectProductionDal.GetAllAsync(p => p.ProjectProductionTypeId == ProjectProductionTypeId);
+            if (projectProduction != null)
+            {
+                return new SuccessDataResult<List<ProjectProduction>>(projectProduction, Messages.ProjectProductionGeted);
+            }
+            else
+            {
+                return new ErrorDataResult<List<ProjectProduction>>(null, Messages.ProjectProductionNotFound);
             }
         }
     }

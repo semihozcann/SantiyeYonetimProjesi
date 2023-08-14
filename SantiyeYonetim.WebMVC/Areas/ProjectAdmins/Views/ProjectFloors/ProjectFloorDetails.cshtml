@@ -1,0 +1,41 @@
+﻿@model SantiyeYonetim.WebMVC.Models.ProjectFloors.ProjectFloorDetailViewModel
+@{
+    ViewData["Title"] = "ProjectFloorDetails";
+    Layout = "~/Areas/ProjectAdmins/Views/Shared/_Layout.cshtml";
+}
+
+<h1>ProjectFloorDetails</h1>
+
+<div class="container">
+
+    @if (Model != null)
+    {
+        <div>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <td>Id</td>
+                        <td>İmalat Adı</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var projectProductionType in Model.ProjectFloor.ProjectProductionTypes)
+                    {
+                        <tr>
+                            <td>@projectProductionType.Id</td>
+                            <td>@projectProductionType.ProductionType.Name</td>
+                            <td><a href="/ProjectAdmins/ProjectProductionTypes/ProjectProductionTypeDetails/@projectProductionType.Id" id="categoryListTableButton">Detay</a></td>
+                            <td><a href="/ProjectAdmins/ProjectBlocks/Update/@projectProductionType.Id" id="categoryListTableButton">Güncelle</a></td>
+                            <td><a href="/ProjectAdmins/ProjectBlocks/Delete/@projectProductionType.Id" id="categoryListTableButton">Sil</a></td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+
+        </div>
+    }
+    else
+    {
+        <p>Hiç Kategori Bulunamadı</p>
+    }
+</div>

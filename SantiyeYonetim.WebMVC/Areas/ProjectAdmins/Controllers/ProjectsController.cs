@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using SantiyeYonetim.Business.Abstract;
 using SantiyeYonetim.Entities.DTOs.Projects;
 using SantiyeYonetim.WebMVC.Helpers.Abstract;
+using SantiyeYonetim.WebMVC.Models.AutoCreater;
 using SantiyeYonetim.WebMVC.Models.Projects;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,14 +18,16 @@ namespace SantiyeYonetim.WebMVC.Areas.ProjectAdmins.Controllers
         private readonly ICompanyService _companyService;
         private readonly IProjectTypeService _projectTypeService;
         private readonly IProjectBlockService _projectBlockService;
+        private readonly IAutoCreaterService _autoCreaterService;
 
 
-        public ProjectsController(IUserAccessor userAccessor, IProjectService projectService, ICompanyService companyService, IProjectTypeService projectTypeService, IProjectBlockService projectBlockService) : base(userAccessor)
+        public ProjectsController(IUserAccessor userAccessor, IProjectService projectService, ICompanyService companyService, IProjectTypeService projectTypeService, IProjectBlockService projectBlockService, IAutoCreaterService autoCreaterService) : base(userAccessor)
         {
             _projectService = projectService;
             _companyService = companyService;
             _projectTypeService = projectTypeService;
             _projectBlockService = projectBlockService;
+            _autoCreaterService = autoCreaterService;
         }
 
         public IActionResult Index()
@@ -176,6 +179,7 @@ namespace SantiyeYonetim.WebMVC.Areas.ProjectAdmins.Controllers
         public async Task<IActionResult> ProjectDetails(int Id)
         {
             var projectBlock = await _projectBlockService.GetAllAsync();
+
             var result = await _projectService.GetByIdAsync(Id);
             ViewBag.ProjectResultMessage = result.Message;
             ViewBag.projectId = Id;
@@ -191,6 +195,27 @@ namespace SantiyeYonetim.WebMVC.Areas.ProjectAdmins.Controllers
                 return View(project);
             }
             return View();
+        }
+
+
+        public IActionResult CreateProjectDetails(ProjectDetailViewModel projectDetailViewModel)
+        {
+            if (ModelState.IsValid)
+            {
+                var createdProject = new AutoCreaterViewModel
+                {
+                    ProjectId = projectDetailViewModel.ProjectId,
+                    BlockNumber = projectDetailViewModel.BlockNumber,
+                    FloorNumber = projectDetailViewModel.FloorNumber,
+                };
+                var result = _autoCreaterService.AddAsync(createdProject.ProjectId, createdProject.BlockNumber, createdProject.FloorNumber);
+                if (result.Success)
+                {
+                    return View("GetAllProjects");
+                }
+                return View("GetAllProjects");
+            }
+            return View("GetAllProjects");
         }
     }
 }

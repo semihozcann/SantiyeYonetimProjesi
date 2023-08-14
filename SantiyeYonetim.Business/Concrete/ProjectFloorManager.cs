@@ -4,6 +4,7 @@ using SantiyeYonetim.Business.Conctants;
 using SantiyeYonetim.Core.Utilities.Result.Abstract;
 using SantiyeYonetim.Core.Utilities.Result.Concrete;
 using SantiyeYonetim.DataAccess.Abstract;
+using SantiyeYonetim.DataAccess.Concrete.EntityFramework.Repositories;
 using SantiyeYonetim.Entities.Concrete;
 using SantiyeYonetim.Entities.DTOs.ProjectFloors;
 using System;
@@ -67,7 +68,7 @@ namespace SantiyeYonetim.Business.Concrete
 
         public async Task<IDataResult<ProjectFloor>> GetByIdAsync(int projectFloorId)
         {
-            var projectFloor = await _projectFloorDal.FindAsync(projectFloorId);
+            var projectFloor = await _projectFloorDal.GetAsync(p =>p.Id == projectFloorId);
             if (projectFloor != null)
             {
                 return new SuccessDataResult<ProjectFloor>(projectFloor, Messages.ProjectFloorGeted);
@@ -97,7 +98,11 @@ namespace SantiyeYonetim.Business.Concrete
             {
                 return new ErrorResult(Messages.ProjectFloorNotFound);
             }
+        }
 
+        public int LastId()
+        {
+            return _projectFloorDal.GetLastId();
         }
     }
 }

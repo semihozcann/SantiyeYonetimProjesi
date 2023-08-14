@@ -4,6 +4,7 @@ using SantiyeYonetim.Business.Conctants;
 using SantiyeYonetim.Core.Utilities.Result.Abstract;
 using SantiyeYonetim.Core.Utilities.Result.Concrete;
 using SantiyeYonetim.DataAccess.Abstract;
+using SantiyeYonetim.DataAccess.Concrete.EntityFramework.Repositories;
 using SantiyeYonetim.Entities.Concrete;
 using SantiyeYonetim.Entities.DTOs.ProjectProductionTypes;
 using System;
@@ -66,7 +67,7 @@ namespace SantiyeYonetim.Business.Concrete
 
         public async Task<IDataResult<ProjectProductionType>> GetByIdAsync(int propjectProductionTypeId)
         {
-            var projectProducionType = await _projectProductionTypeDal.FindAsync(propjectProductionTypeId);
+            var projectProducionType = await _projectProductionTypeDal.GetAsync(p => p.Id == propjectProductionTypeId);
             if (projectProducionType != null)
             {
                 return new SuccessDataResult<ProjectProductionType>(projectProducionType , Messages.ProjectProductionTypeGeted);
@@ -96,6 +97,11 @@ namespace SantiyeYonetim.Business.Concrete
             {
                 return new ErrorResult(Messages.ProjectProductionTypeNotFound);
             }
+        }
+
+        public int LastId()
+        {
+            return _projectProductionTypeDal.GetLastId();
         }
     }
 }

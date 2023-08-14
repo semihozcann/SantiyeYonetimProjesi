@@ -13,9 +13,10 @@ namespace SantiyeYonetim.Entities.Concrete
         public int ProductionTypeId { get; set; }
 
 
+
+        public List<ProjectProduction> ProjectProductions { get; set; }
         public ProductionType ProductionType { get; set; }
         public ProjectFloor ProjectFloor { get; set; }
-        public List<Production> Productions { get; set; }
 
 
 

@@ -67,7 +67,7 @@ namespace SantiyeYonetim.Business.Concrete
 
         public async Task<IDataResult<ProductionType>> GetByIdAsync(int productionTypeId)
         {
-            var production = await _productionTypeDal.FindAsync(productionTypeId);
+            var production = await _productionTypeDal.GetAsync(p => p.Id == productionTypeId);
             if (production != null)
             {
                 return new SuccessDataResult<ProductionType>(production, Messages.ProductionTypeGeted);

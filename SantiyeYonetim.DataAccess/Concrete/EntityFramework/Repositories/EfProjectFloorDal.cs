@@ -15,5 +15,18 @@ namespace SantiyeYonetim.DataAccess.Concrete.EntityFramework.Repositories
         public EfProjectFloorDal(DbContext context) : base(context)
         {
         }
+
+        public int GetLastId()
+        {
+            using (SantiyeYonetimContext context = new SantiyeYonetimContext())
+            {
+                var result = from q in context.ProjectFloors
+                             orderby q.Id ascending
+                             select q.Id;
+                return result.Last();
+            }
+
+
+        }
     }
 }

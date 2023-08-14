@@ -19,5 +19,7 @@ namespace SantiyeYonetim.Business.Abstract
         Task<IResult> DeleteAsync(int propjectProductionTypeId);
 
         List<ProjectProductionType> GetAllProjectProductionType();
+
+        int LastId();
     }
 }

@@ -18,5 +18,7 @@ namespace SantiyeYonetim.Business.Abstract
         Task<IResult> DeleteAsync(int projectBlockId);
 
         List<ProjectBlock> GetAllProjectBlock();
+
+        int LastId();
     }
 }

@@ -9,16 +9,6 @@
 
 <div class="container">
 
-    <div>
-        <table>
-            <tr>
-                <td>Yeni Block eklemek için ekle butonuna tıklayınız</td>
-                <td>:</td>
-                <td> <a asp-area="ProjectAdmins" asp-controller="ProjectBlocks" asp-action="Add">Projeye Blok Ekle</a></td>
-            </tr>
-        </table>
-    </div>
-
     @if (Model != null)
     {
         <div>
@@ -42,14 +32,14 @@
                         </tr>
                 </tbody>
             </table>
-
         </div>
-                <div>
-            <table class="table">
+        <div>
+            @if (Model.Project.ProjectBlocks != null)
+            {
+                <table class="table">
                 <thead>
                     <tr>
                         <td>Id</td>
-                        <td>Proje Adı</td>
                         <td>Blok Adı</td>
                     </tr>
                 </thead>
@@ -58,14 +48,20 @@
                     {
                         <tr>
                             <td>@projectBlock.Id</td>
-                            <td>@projectBlock.Project.Name</td>
                             <td>@projectBlock.Name</td>
+                            <td><a href="/ProjectAdmins/ProjectBlocks/ProjectBlockDetails/@projectBlock.Id" id="categoryListTableButton">Detay</a></td>
                             <td><a href="/ProjectAdmins/ProjectBlocks/Update/@projectBlock.Id" id="categoryListTableButton">Güncelle</a></td>
                             <td><a href="/ProjectAdmins/ProjectBlocks/Delete/@projectBlock.Id" id="categoryListTableButton">Sil</a></td>
                         </tr>
                     }
                 </tbody>
-            </table>
+                </table>    
+            }
+            else
+            {
+                <p>Hiç Block Bulunamadı</p>
+            }
+            
 
         </div>
     }
@@ -80,6 +76,13 @@
 <button type="button" class="btn btn-success btn-lg" data-toggle="modal" data-target="#UyeOl">
   Üye Ol
 </button>
+
+<button type="button" class="btn btn-success btn-lg" data-toggle="modal" data-target="#Olustur">
+  Olustur
+</button>
+
+
+
 <div class="modal fade" id="UyeOl" tabindex="-1" role="dialog" aria-labelledby="">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -87,7 +90,7 @@
                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
                 <h4 class="modal-title" id="myModalLabel">Üye Ol</h4>
             </div>
-@*            <form method="post" action="/home/uyeol">
+            <form method="post" action="/home/uyeol">
                 <div class="modal-body">
                     <div class="form-group">
                         <label>Kullanıcı adınız
@@ -102,17 +105,34 @@
                     <button type="button" class="btn btn-default" data-dismiss="modal">Kapat</button>
                     <button type="submit" class="btn btn-primary">Üye Ol</button>
                 </div >
-            </form >*@
-                <form asp-controller="ProjectBlocks" asp-action="Add" method="post" enctype="multipart/form-data">
+            </form >
+        </div >
+    </div>
+</div>
+
+<div class="modal fade" id="Olustur" tabindex="-1" role="dialog" aria-labelledby="">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+               <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                <h4 class="modal-title" id="myModalLabel">Üye Ol</h4>
+            </div>
+
+    <form asp-controller="Projects" asp-action="CreateProjectDetails" method="post" enctype="multipart/form-data">
         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
         <div class="form-group">
             <label asp-for="ProjectId" class="control-label"></label>
             <input asp-for="ProjectId" name="ProjectId" value="@ViewBag.projectId" />
         </div>
         <div class="form-group">
-            <label asp-for="ProjectBlockName" class="control-label"></label>
-            <input asp-for="ProjectBlockName" id="Name" type="text" class="form-control" placeholder="Proje Adı" />
-            <span asp-validation-for="ProjectBlockName" class="text-danger"></span>
+            <label asp-for="BlockNumber" class="control-label"></label>
+            <input asp-for="BlockNumber" id="BlockNumber" type="text" class="form-control" placeholder="Block Sayısı" />
+            <span asp-validation-for="BlockNumber" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="FloorNumber" class="control-label"></label>
+            <input asp-for="FloorNumber" id="FloorNumber" type="text" class="form-control" placeholder="Kat Sayısı" />
+            <span asp-validation-for="FloorNumber" class="text-danger"></span>
         </div>
         <div class="form-group">
             <button class="btn badge-primary" type="submit" value="Add">Kaydet</button>

@@ -9,6 +9,7 @@ namespace SantiyeYonetim.Entities.DTOs.ProjectProductions
     public class ProjectProductionAddDto
     {
         public int ProductionId { get; set; }
+        public int ProjectProductionTypeId { get; set; }
 
         public string DrawingFilePath { get; set; }
         public DateTime ProductionStartDate { get; set; }

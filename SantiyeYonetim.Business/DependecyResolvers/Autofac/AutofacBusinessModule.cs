@@ -50,6 +50,8 @@ namespace SantiyeYonetim.Business.DependecyResolvers.Autofac
             builder.RegisterType<EfProjectTypeDal>().As<IProjectTypeDal>();
             builder.RegisterType<ProjectTypeManager>().As<IProjectTypeService>();
 
+            builder.RegisterType<AutoCreaterManager>().As<IAutoCreaterService>();
+
 
         }
     }

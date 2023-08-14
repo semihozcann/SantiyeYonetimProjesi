@@ -108,5 +108,6 @@ namespace SantiyeYonetim.Core.DataAccess.Concrete
         {
             return _context.Set<TEntity>().AsNoTracking().ToList();
         }
+
     }
 }

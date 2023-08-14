@@ -1,0 +1,40 @@
+﻿@model SantiyeYonetim.WebMVC.Models.ProjectProductionTypes.ProjectProductionTypeDetailViewModel
+@{
+    ViewData["Title"] = "ProjectProductionTypeDetails";
+    Layout = "~/Areas/ProjectAdmins/Views/Shared/_Layout.cshtml";
+}
+
+<h1>ProjectProductionTypeDetails</h1>
+
+<div class="container">
+
+    @if (Model != null)
+    {
+        <div>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <td>Id</td>
+                        <td>İmalat Adı</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var productions in Model.ProjectProductions)
+                    {
+                        <tr>
+                            <td>@productions.Id</td>
+                            <td>@productions.Production.Name</td>
+                            <td><a href="/ProjectAdmins/ProjectBlocks/Update/@productions.Id" id="categoryListTableButton">Güncelle</a></td>
+                            <td><a href="/ProjectAdmins/ProjectBlocks/Delete/@productions.Id" id="categoryListTableButton">Sil</a></td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+
+        </div>
+    }
+    else
+    {
+        <p>Hiç Kategori Bulunamadı</p>
+    }
+</div>

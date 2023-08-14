@@ -34,5 +34,6 @@ namespace SantiyeYonetim.Core.DataAccess.Abstract
         Task<int> SaveAsync();
 
         List<TEntity> GetAll();
+
     }
 }
